@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    double meal_cost;
+    cin >> meal_cost;
+    
+    int tip_percent,result;
+    
+    float tip,tax,totalCost;
+    cin >> tip_percent;
+    int tax_percent;
+    cin >> tax_percent;
+    
+    tip=meal_cost*(tip_percent)/100;
+    tax=meal_cost*(tax_percent)/100;
+    
+    totalCost=meal_cost + tip + tax;
+    result=round(totalCost);
+    cout<<"The total meal cost is "<<result<<" dollars.";
+    return 0;
+}
