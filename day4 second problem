@@ -1,0 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    long long N,K;
+    cin>>N>>K;
+    char input[N+K-1],output[N];
+    cin>>input;
+    output[0] = input[0];
+    output[N-1] = input[sizeof(input)-1];
+    output[N] = '\0';
+    int temp = input[0]-'0', cur, prev;
+    for(long i = 1;i<N-1;i++)
+    {
+        if(i >= K )
+            temp ^= output[i - K] - '0';
+        output[i] = (temp ^ input[i] - '0')+'0';
+        temp ^= output[i]-'0';
+    }
+    cout<<output;
+    return 0;
+}
