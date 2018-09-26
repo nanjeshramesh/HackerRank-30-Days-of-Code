@@ -1,0 +1,5 @@
+int getHeight(Node* root){
+          //Write your code here
+            return root == NULL ? -1 : 1 + max(getHeight(root->left), getHeight(root->right));
+            
+        }
